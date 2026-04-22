@@ -1,18 +1,446 @@
 <!doctype html>
-<html lang="de">
+<html lang="de-CH">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HK Design</title>
-    <meta name="description" content="Webseite von HK Design" />
-    <link rel="stylesheet" href="/src/styles/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HK Design | Professionelle Webseiten für Schweizer KMU</title>
+    <meta
+      name="description"
+      content="HK Design erstellt professionelle Webseiten für Schweizer KMU: klar, schnell und transparent. Direkte Zusammenarbeit ohne Agentur-Bürokratie."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_CH" />
+    <meta property="og:title" content="HK Design | Professionelle Webseiten für Schweizer KMU" />
+    <meta
+      property="og:description"
+      content="Direkte Zusammenarbeit statt Agentur-Bürokratie. Moderne Webseiten, transparente Preise und klare Prozesse."
+    />
+    <meta property="og:url" content="https://sany0321.github.io/hkdesign-web/" />
+    <meta property="og:image" content="https://sany0321.github.io/hkdesign-web/assets/og-cover.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#1A1A2E" />
+    <link rel="canonical" href="https://sany0321.github.io/hkdesign-web/" />
+    <link rel="alternate" hreflang="de-CH" href="https://sany0321.github.io/hkdesign-web/" />
+    <link rel="alternate" hreflang="en" href="https://sany0321.github.io/hkdesign-web/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://sany0321.github.io/hkdesign-web/" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "HK Design",
+        "url": "https://sany0321.github.io/hkdesign-web/",
+        "description": "Professionelle Webseiten für Schweizer KMU mit direkter Zusammenarbeit, transparenten Preisen und klaren Prozessen.",
+        "areaServed": "CH",
+        "serviceType": "Webdesign und Webentwicklung",
+        "email": "kontakt@hkdesign.ch",
+        "sameAs": ["https://sany0321.github.io/hkdesign-web/"]
+      }
+    </script>
+    <script type="module">
+      if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+        import("react-grab").catch(() => {});
+      }
+    </script>
   </head>
   <body>
-    <main class="container">
-      <h1>HK Design</h1>
-      <p>Projekt ist bereit. Wir koennen jetzt Inhalte und Design aufbauen.</p>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+    <header class="site-header" data-header>
+      <div class="container nav-wrap">
+        <a class="logo" href="#home" aria-label="HK Design Startseite">HK<span>.</span>Design</a>
+
+        <nav class="site-nav" aria-label="Hauptnavigation" data-desktop-nav>
+          <a href="#leistungen">Leistungen</a>
+          <a href="#preise">Preise</a>
+          <a href="#prozess">Prozess</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+
+        <div class="nav-actions">
+          <div class="lang-switch" aria-label="Sprache">
+            <a class="is-active" href="./">DE</a>
+            <a href="en/">EN</a>
+          </div>
+          <a class="btn btn-primary btn-nav" href="#kontakt">Jetzt anfragen</a>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+            <span></span><span></span><span></span>
+            <span class="sr-only">Menü öffnen</span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile-nav" id="mobile-menu" aria-label="Mobile Navigation" data-mobile-nav>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#preise">Preise</a>
+        <a href="#prozess">Prozess</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#kontakt">Kontakt</a>
+        <div class="mobile-lang">
+          <a class="is-active" href="./">Deutsch</a>
+          <a href="en/">English</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero section" id="home" data-section="home">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Webdesign für Schweizer KMU</p>
+            <h1>Ihre Webseite soll verkaufen, nicht nur online sein.</h1>
+            <p class="lead">
+              HK Design entwickelt moderne Firmenwebseiten mit klarer Struktur, starken Inhalten und transparenter Umsetzung.
+              Direkt mit Ihnen. Ohne Agentur-Bürokratie.
+            </p>
+            <ul class="hero-points">
+              <li>Strategischer Aufbau für messbar bessere Anfragen</li>
+              <li>Persönliche Zusammenarbeit ohne Projekt-Schleifen</li>
+              <li>Schnelle Umsetzung mit klaren nächsten Schritten</li>
+            </ul>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#kontakt">Kostenloses Erstgespräch</a>
+              <a class="btn btn-ghost" href="#portfolio">Fallstudien ansehen</a>
+            </div>
+            <div class="hero-trust">
+              <span>Antwort innert 24 Stunden</span>
+              <span>Transparente Festpreise</span>
+              <span>Schweizer Qualität</span>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="visual-shell" role="img" aria-label="Browser-Mockup einer professionellen Firmenwebseite">
+              <div class="visual-topbar">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="visual-content">
+                <div class="visual-kicker">HK Design Demo</div>
+                <h2>Digitale Präsenz mit klarer Wirkung</h2>
+                <p>Mehr Anfragen. Mehr Vertrauen. Klare Positionierung für lokale Unternehmen.</p>
+                <div class="visual-lines">
+                  <span><strong>01</strong> klare Leistungen</span>
+                  <span><strong>02</strong> überzeugende Referenzführung</span>
+                  <span><strong>03</strong> direkte Kontakt-Conversion</span>
+                </div>
+                <div class="visual-tags">
+                  <span>Mobile optimiert</span>
+                  <span>SEO-ready</span>
+                  <span>Schneller Launch</span>
+                </div>
+              </div>
+            </div>
+            <aside class="hero-note">
+              <p>Direkte Zusammenarbeit vom Erstgespräch bis zum Launch.</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats section-tight" aria-label="Kennzahlen">
+        <div class="container stats-grid">
+          <article class="stat-card reveal">
+            <strong>24h</strong>
+            <span>Antwortzeit auf neue Anfragen</span>
+          </article>
+          <article class="stat-card reveal">
+            <strong>80%</strong>
+            <span>der Erstkontakte kommen heute mobil</span>
+          </article>
+          <article class="stat-card reveal">
+            <strong>3 Sek.</strong>
+            <span>entscheiden über ersten Eindruck</span>
+          </article>
+          <article class="stat-card reveal">
+            <strong>100%</strong>
+            <span>klare Preise ohne versteckte Kosten</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="nutzen" data-section="nutzen">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Warum das wichtig ist</p>
+            <h2>Eine gute Webseite bringt messbar bessere Anfragen</h2>
+          </div>
+          <div class="benefits-grid">
+            <article class="benefit-card reveal">
+              <h3>Mehr qualifizierte Anfragen</h3>
+              <p>Klare Struktur und präzise Botschaften führen Besucher schneller zur Kontaktaufnahme.</p>
+            </article>
+            <article class="benefit-card reveal">
+              <h3>Mehr Vertrauen im Erstkontakt</h3>
+              <p>Professionelles Design signalisiert Qualität, bevor das erste Gespräch beginnt.</p>
+            </article>
+            <article class="benefit-card reveal">
+              <h3>Bessere lokale Sichtbarkeit</h3>
+              <p>Saubere SEO-Basis hilft, regional gefunden zu werden und neue Kunden zu erreichen.</p>
+            </article>
+            <article class="benefit-card reveal">
+              <h3>Starke mobile Nutzererfahrung</h3>
+              <p>Ihre Seite funktioniert auf jedem Gerät schnell, sauber und verkaufsorientiert.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="leistungen" data-section="leistungen">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Leistungen</p>
+            <h2>Alles, was Ihre Firmenwebseite wirklich braucht</h2>
+          </div>
+          <div class="services-grid">
+            <article class="service-card reveal" data-code="WD"><h3>Webdesign</h3><p>Individuelle Gestaltung mit klarer Markenwirkung und professioneller Typografie.</p></article>
+            <article class="service-card reveal" data-code="DEV"><h3>Entwicklung</h3><p>Sauberer, schneller Code ohne unnötige Komplexität. Stabil und wartbar.</p></article>
+            <article class="service-card reveal" data-code="SEO"><h3>SEO</h3><p>Technische Basis, Metadaten und Struktur für bessere Auffindbarkeit.</p></article>
+            <article class="service-card reveal" data-code="TXT"><h3>Texte</h3><p>Verkaufsstarke Inhalte ohne Floskeln. Klar, verständlich und glaubwürdig.</p></article>
+            <article class="service-card reveal" data-code="HST"><h3>Hosting</h3><p>Unterstützung bei Domain, SSL, Performance und sicherer Bereitstellung.</p></article>
+            <article class="service-card reveal" data-code="MNT"><h3>Wartung</h3><p>Updates, Anpassungen und technische Betreuung nach dem Launch.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="preise" data-section="preise">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Preise</p>
+            <h2>Transparent kalkuliert, klar vergleichbar</h2>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="price-card reveal">
+              <header><h3>Basic</h3><p class="price">CHF 990</p></header>
+              <p class="price-subline">Für den professionellen Start</p>
+              <ul>
+                <li>One-Page Firmenwebseite</li>
+                <li>Responsive Design</li>
+                <li>Kontaktformular</li>
+                <li>Basis-SEO Setup</li>
+              </ul>
+              <a class="btn btn-ghost" href="#kontakt">Anfrage starten</a>
+            </article>
+
+            <article class="price-card is-featured reveal">
+              <p class="badge">Empfohlen</p>
+              <header><h3>Professional</h3><p class="price">CHF 1880</p></header>
+              <p class="price-subline">Bestes Verhältnis aus Wirkung und Budget</p>
+              <ul>
+                <li>Bis zu 5 Seiten</li>
+                <li>Individuelles Premium-Design</li>
+                <li>SEO + Performance Feinschliff</li>
+                <li>Texthilfe und Conversion-Fokus</li>
+              </ul>
+              <a class="btn btn-primary" href="#kontakt">Jetzt planen</a>
+            </article>
+
+            <article class="price-card reveal">
+              <header><h3>Enterprise</h3><p class="price">CHF 2950</p></header>
+              <p class="price-subline">Für anspruchsvollere Anforderungen</p>
+              <ul>
+                <li>Komplexere Seitenstruktur</li>
+                <li>Erweiterte Funktionen</li>
+                <li>Priorisierte Umsetzung</li>
+                <li>Persönliche Projektbegleitung</li>
+              </ul>
+              <a class="btn btn-ghost" href="#kontakt">Projekt besprechen</a>
+            </article>
+          </div>
+
+          <p class="pricing-note reveal">Zusatzseiten: <strong>CHF 250 pro Seite</strong></p>
+          <div class="pricing-assurance reveal">
+            <span>Keine Setup-Gebühren</span>
+            <span>Klare Leistungsbeschreibung</span>
+            <span>Persönliche Übergabe inklusive</span>
+          </div>
+
+          <div class="maintenance reveal">
+            <h3>Wartungsabo nach Launch</h3>
+            <div class="maintenance-grid">
+              <article><h4>Basic</h4><p>CHF 49 / Monat</p><span>kleine Anpassungen</span></article>
+              <article><h4>Plus</h4><p>CHF 89 / Monat</p><span>regelmässige Updates</span></article>
+              <article><h4>Pro</h4><p>CHF 149 / Monat</p><span>priorisierte Betreuung</span></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="prozess" data-section="prozess">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Ablauf</p>
+            <h2>Vier klare Schritte bis zur Live-Schaltung</h2>
+          </div>
+          <ol class="process-grid">
+            <li class="process-card reveal"><span>01</span><h3>Gespräch</h3><p>Ziele, Zielgruppe und Anforderungen werden klar definiert.</p></li>
+            <li class="process-card reveal"><span>02</span><h3>Konzept</h3><p>Struktur, Inhalte und visuelle Richtung werden abgestimmt.</p></li>
+            <li class="process-card reveal"><span>03</span><h3>Umsetzung</h3><p>Design und Entwicklung erfolgen präzise, transparent und effizient.</p></li>
+            <li class="process-card reveal"><span>04</span><h3>Launch</h3><p>Finale Prüfung, Veröffentlichung und Übergabe mit Support.</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section" id="portfolio" data-section="portfolio">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Demo-Fallstudien</p>
+            <h2>Beispiele für typische KMU-Projekte</h2>
+          </div>
+          <div class="portfolio-grid">
+            <article class="case-card tone-1 reveal">
+              <div class="case-mock" role="img" aria-label="Mockup einer Webseite für einen Handwerksbetrieb"></div>
+              <div class="case-body">
+                <p class="case-industry">Handwerksbetrieb</p>
+                <h3>Ziel: Mehr regionale Anfragen</h3>
+                <p>Lösung: Klare Leistungsseiten, Referenzen und starke Kontaktführung.</p>
+                <p><strong>Paket:</strong> Professional</p>
+                <a href="#kontakt">Ähnliches Projekt anfragen</a>
+              </div>
+            </article>
+            <article class="case-card tone-2 reveal">
+              <div class="case-mock" role="img" aria-label="Mockup einer Webseite für einen Gastronomiebetrieb"></div>
+              <div class="case-body">
+                <p class="case-industry">Gastronomie</p>
+                <h3>Ziel: Mehr Reservierungen</h3>
+                <p>Lösung: Mobile-first Menüführung, klare Öffnungszeiten und Reservierungs-CTA.</p>
+                <p><strong>Paket:</strong> Basic + Zusatzseiten</p>
+                <a href="#kontakt">Projekt besprechen</a>
+              </div>
+            </article>
+            <article class="case-card tone-3 reveal">
+              <div class="case-mock" role="img" aria-label="Mockup einer Webseite für ein Dienstleistungsunternehmen"></div>
+              <div class="case-body">
+                <p class="case-industry">Dienstleistung</p>
+                <h3>Ziel: Vertrauensaufbau im Erstkontakt</h3>
+                <p>Lösung: Präzise Positionierung, Testimonials und strukturierte Angebotsstrecke.</p>
+                <p><strong>Paket:</strong> Enterprise</p>
+                <a href="#kontakt">Strategiegespräch starten</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="vertrauen" data-section="vertrauen">
+        <div class="container trust-wrap reveal">
+          <div>
+            <p class="eyebrow">Vertrauen</p>
+            <h2>Zusammenarbeit, auf die Sie sich verlassen können</h2>
+          </div>
+          <ul class="trust-list">
+            <li>Antwort innert 24 Stunden</li>
+            <li>Kostenloses Erstgespräch</li>
+            <li>Schweizer Qualitätsanspruch</li>
+            <li>Transparente Preise</li>
+            <li>Klare Prozesse ohne Überraschungen</li>
+            <li>Persönliche Zusammenarbeit statt Agentur-Kette</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="ueber" data-section="ueber">
+        <div class="container about-grid">
+          <div class="about-copy reveal">
+            <p class="eyebrow">Über HK Design</p>
+            <h2>Ihr direkter Ansprechpartner für einen professionellen Webauftritt</h2>
+            <p>
+              HK Design begleitet Schweizer KMU von der ersten Idee bis zur veröffentlichten Webseite.
+              Der Fokus liegt auf Klarheit, Qualität und Umsetzbarkeit.
+            </p>
+          </div>
+          <div class="values reveal">
+            <h3>Werte</h3>
+            <ul>
+              <li><strong>Transparenz:</strong> klare Leistungen und nachvollziehbare Kosten.</li>
+              <li><strong>Qualität:</strong> hochwertiges Design und saubere technische Basis.</li>
+              <li><strong>Verlässlichkeit:</strong> strukturierter Ablauf und termintreue Umsetzung.</li>
+              <li><strong>Partnerschaft:</strong> direkte Zusammenarbeit auf Augenhöhe.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-contact" id="kontakt" data-section="kontakt">
+        <div class="container contact-grid">
+          <div class="contact-copy reveal">
+            <p class="eyebrow">Kontakt</p>
+            <h2>Erzählen Sie kurz, was Sie benötigen</h2>
+            <p>Sie erhalten eine Rückmeldung innert 24 Stunden mit einer klaren nächsten Empfehlung.</p>
+            <ul>
+              <li>E-Mail: <a href="mailto:kontakt@hkdesign.ch">kontakt@hkdesign.ch</a></li>
+              <li>Standort: Schweiz</li>
+              <li>Kostenloses Erstgespräch: 30 Minuten</li>
+            </ul>
+          </div>
+
+          <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
+            <div class="grid-2">
+              <label>Vorname<input type="text" name="vorname" required /></label>
+              <label>Nachname<input type="text" name="nachname" required /></label>
+            </div>
+            <label>Firma<input type="text" name="firma" /></label>
+            <label>E-Mail<input type="email" name="email" required /></label>
+            <label>
+              Bedarf
+              <select name="bedarf" required>
+                <option value="">Bitte wählen</option>
+                <option>Neue Firmenwebseite</option>
+                <option>Relaunch bestehender Webseite</option>
+                <option>SEO und Sichtbarkeit</option>
+                <option>Wartung und Betreuung</option>
+              </select>
+            </label>
+            <label>Nachricht<textarea name="nachricht" rows="5" required></textarea></label>
+
+            <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <label class="consent">
+              <input type="checkbox" name="consent" required />
+              <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung zu.</span>
+            </label>
+
+            <button class="btn btn-primary" type="submit">Anfrage senden</button>
+            <p class="form-note">Formspree ist vorbereitet. Ersetzen Sie <code>YOUR_FORMSPREE_ID</code> durch Ihre echte ID.</p>
+            <p class="form-message" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
     </main>
 
-    <script type="module" src="/src/scripts/main.js"></script>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="logo" href="#home">HK<span>.</span>Design</a>
+          <p>Professionelle Webseiten für Schweizer KMU. Klar, schnell und transparent.</p>
+        </div>
+        <div>
+          <h3>Links</h3>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="en/">English Version</a>
+        </div>
+        <div>
+          <h3>Kontakt</h3>
+          <a href="mailto:kontakt@hkdesign.ch">kontakt@hkdesign.ch</a>
+          <span>Antwort innert 24 Stunden</span>
+        </div>
+      </div>
+      <div class="container footer-meta">
+        <small>&copy; <span id="year"></span> HK Design. Alle Rechte vorbehalten.</small>
+      </div>
+    </footer>
+
+    <a class="mobile-sticky-cta" href="#kontakt">Jetzt unverbindlich anfragen</a>
+
+    <script src="js/script.js" defer></script>
   </body>
 </html>

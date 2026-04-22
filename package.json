@@ -5,10 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "rm -rf dist && mkdir -p dist && cp -R index.html 404.html impressum.html datenschutz.html en css js assets robots.txt sitemap.xml dist/",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^5.2.0",
     "vite": "^7.1.0"
+  },
+  "dependencies": {
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-grab": "^0.1.32"
   }
 }
