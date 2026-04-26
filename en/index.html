@@ -3,23 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HK Design | Professional Websites for Swiss SMEs</title>
+    <title>HK Design | Web Design for Swiss SMEs with Clear Conversion Focus</title>
     <meta
       name="description"
-      content="HK Design builds professional websites for Swiss SMEs with direct collaboration, transparent pricing, and fast delivery."
+      content="HK Design builds professional company websites for Swiss SMEs with strategic messaging, strong trust signals, and clean technical execution."
     />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#151d31" />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="HK Design | Professional Websites for Swiss SMEs" />
+    <meta property="og:locale" content="en_CH" />
+    <meta property="og:site_name" content="HK Design" />
+    <meta property="og:title" content="HK Design | Web Design for Swiss SMEs" />
     <meta
       property="og:description"
-      content="Direct collaboration without agency bureaucracy. Modern websites with transparent pricing and clear process."
+      content="Professional websites that build trust and generate qualified inquiries. Delivered through direct collaboration."
     />
     <meta property="og:url" content="https://sany0321.github.io/hkdesign-web/en/" />
     <meta property="og:image" content="https://sany0321.github.io/hkdesign-web/assets/og-cover.svg" />
+    <meta property="og:image:alt" content="HK Design web design for Swiss SMEs" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#1A1A2E" />
+    <meta name="twitter:title" content="HK Design | Web Design for Swiss SMEs" />
+    <meta
+      name="twitter:description"
+      content="Conversion-focused company websites with premium design, clear structure, and direct implementation."
+    />
+    <meta name="twitter:image" content="https://sany0321.github.io/hkdesign-web/assets/og-cover.svg" />
     <link rel="canonical" href="https://sany0321.github.io/hkdesign-web/en/" />
     <link rel="alternate" hreflang="de-CH" href="https://sany0321.github.io/hkdesign-web/" />
     <link rel="alternate" hreflang="en" href="https://sany0321.github.io/hkdesign-web/en/" />
@@ -28,7 +36,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/style.css" />
@@ -38,11 +46,10 @@
         "@type": "ProfessionalService",
         "name": "HK Design",
         "url": "https://sany0321.github.io/hkdesign-web/en/",
-        "description": "Professional websites for Swiss SMEs with direct collaboration, transparent pricing, and clear delivery process.",
-        "areaServed": "CH",
-        "serviceType": "Web design and development",
-        "email": "kontakt@hkdesign.ch",
-        "sameAs": ["https://sany0321.github.io/hkdesign-web/"]
+        "description": "Web design and development for Swiss SMEs with direct collaboration and a clear conversion focus.",
+        "areaServed": "Switzerland",
+        "serviceType": ["Web design", "Web development", "SEO basics", "Maintenance"],
+        "email": "kontakt@hkdesign.ch"
       }
     </script>
     <script type="module">
@@ -53,6 +60,7 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header" data-header>
       <div class="container nav-wrap">
         <a class="logo" href="#home" aria-label="HK Design home">HK<span>.</span>Design</a>
@@ -60,17 +68,17 @@
         <nav class="site-nav" aria-label="Main navigation" data-desktop-nav>
           <a href="#services">Services</a>
           <a href="#pricing">Pricing</a>
-          <a href="#process">Process</a>
-          <a href="#portfolio">Portfolio</a>
+          <a href="#cases">Case Studies</a>
+          <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
 
         <div class="nav-actions">
           <div class="lang-switch" aria-label="Language">
-            <a href="../">DE</a>
-            <a class="is-active" href="./">EN</a>
+            <a href="../" lang="de">DE</a>
+            <a class="is-active" href="./" lang="en">EN</a>
           </div>
-          <a class="btn btn-primary btn-nav" href="#contact">Request now</a>
+          <a class="btn btn-primary btn-nav" href="#contact">Book intro call</a>
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
             <span></span><span></span><span></span>
             <span class="sr-only">Open menu</span>
@@ -81,8 +89,8 @@
       <nav class="mobile-nav" id="mobile-menu" aria-label="Mobile navigation" data-mobile-nav>
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
-        <a href="#process">Process</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#cases">Case Studies</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <div class="mobile-lang">
           <a href="../">Deutsch</a>
@@ -93,91 +101,62 @@
 
     <main id="main">
       <section class="hero section" id="home" data-section="home">
+        <div class="hero-surface" aria-hidden="true"></div>
         <div class="container hero-grid">
           <div class="hero-copy reveal">
             <p class="eyebrow">Web design for Swiss SMEs</p>
-            <h1>Your website should generate business, not just exist online.</h1>
+            <h1>Your website should do more than look modern. It should generate qualified inquiries.</h1>
             <p class="lead">
-              HK Design creates modern company websites with strategic structure, clear messaging, and transparent execution.
-              Direct collaboration. No agency bureaucracy.
+              I build company websites with clear positioning, stronger trust signals, and structured conversion paths.
+              Direct collaboration from strategy to launch.
             </p>
             <ul class="hero-points">
-              <li>Strategic page structure built for lead generation</li>
-              <li>Direct collaboration without agency bottlenecks</li>
-              <li>Fast and transparent execution from call to launch</li>
+              <li>Clear message in the first seconds</li>
+              <li>Page structure designed for lead quality</li>
+              <li>Clean technical foundation for SEO and performance</li>
             </ul>
             <div class="hero-cta">
-              <a class="btn btn-primary" href="#contact">Free initial call</a>
-              <a class="btn btn-ghost" href="#portfolio">View case demos</a>
+              <a class="btn btn-primary" href="#contact">Free intro call</a>
+              <a class="btn btn-ghost" href="#pricing">Compare packages</a>
             </div>
-            <div class="hero-trust">
+            <div class="hero-trust" aria-label="Trust highlights">
               <span>Reply within 24 hours</span>
-              <span>Transparent fixed pricing</span>
-              <span>Swiss quality standard</span>
+              <span>Fixed pricing</span>
+              <span>One direct partner</span>
             </div>
           </div>
 
-          <div class="hero-visual reveal">
-            <div class="visual-shell" role="img" aria-label="Professional browser mockup">
-              <div class="visual-topbar">
-                <span></span><span></span><span></span>
-              </div>
-              <div class="visual-content">
-                <div class="visual-kicker">HK Design Demo</div>
-                <h2>Digital presence with clear impact</h2>
-                <p>More leads. More trust. Better positioning for local businesses.</p>
-                <div class="visual-lines">
-                  <span><strong>01</strong> clear service offer</span>
-                  <span><strong>02</strong> stronger credibility flow</span>
-                  <span><strong>03</strong> direct contact conversion</span>
-                </div>
-                <div class="visual-tags">
-                  <span>Mobile optimized</span>
-                  <span>SEO-ready</span>
-                  <span>Fast launch</span>
-                </div>
-              </div>
+          <div class="hero-panel reveal" aria-label="Project timeline preview">
+            <p class="hero-panel-kicker">Typical project kickoff</p>
+            <h2>From first inquiry to a clear execution plan in 5 business days.</h2>
+            <ol class="hero-steps">
+              <li><strong>Day 1:</strong> clarify goals, audience, and conversion priorities</li>
+              <li><strong>Day 2-3:</strong> define information architecture and messaging flow</li>
+              <li><strong>Day 4-5:</strong> align design direction and start implementation</li>
+            </ol>
+            <div class="hero-panel-meta">
+              <span>Swiss market focus</span>
+              <span>Remote or on-site</span>
+              <span>DE / EN</span>
             </div>
-            <aside class="hero-note">
-              <p>Direct collaboration from strategy call to launch.</p>
-            </aside>
           </div>
         </div>
       </section>
 
-      <section class="stats section-tight" aria-label="Key figures">
-        <div class="container stats-grid">
-          <article class="stat-card reveal"><strong>24h</strong><span>response time for new requests</span></article>
-          <article class="stat-card reveal"><strong>80%</strong><span>of first visits happen on mobile</span></article>
-          <article class="stat-card reveal"><strong>3 sec</strong><span>to form a first impression</span></article>
-          <article class="stat-card reveal"><strong>100%</strong><span>transparent pricing structure</span></article>
-        </div>
-      </section>
-
-      <section class="section" id="benefits" data-section="benefits">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">Why this matters</p>
-            <h2>A strong website turns attention into qualified business inquiries</h2>
-          </div>
-          <div class="benefits-grid">
-            <article class="benefit-card reveal">
-              <h3>More qualified leads</h3>
-              <p>Clear structure and focused messaging guide visitors faster toward contact.</p>
-            </article>
-            <article class="benefit-card reveal">
-              <h3>Higher trust at first glance</h3>
-              <p>Professional design signals quality before the first call even happens.</p>
-            </article>
-            <article class="benefit-card reveal">
-              <h3>Better local visibility</h3>
-              <p>Solid SEO fundamentals help your business get found in your region.</p>
-            </article>
-            <article class="benefit-card reveal">
-              <h3>Stronger mobile experience</h3>
-              <p>Your website remains clean, fast, and conversion-focused on every device.</p>
-            </article>
-          </div>
+      <section class="proof-bar section-tight" aria-label="Key facts">
+        <div class="container proof-grid">
+          <article class="proof-item reveal">
+            <strong>24h</strong>
+            <span>typical response time for new inquiries</span>
+          </article>
+          <article class="proof-item reveal">
+            <strong>3 sec</strong>
+            <span>to create a first impression</span>
+          </article>
+          <article class="proof-item reveal">
+            <strong>Mobile first</strong>
+            <span>built for the most important traffic channel</span>
+          </article>
         </div>
       </section>
 
@@ -185,131 +164,168 @@
         <div class="container">
           <div class="section-head reveal">
             <p class="eyebrow">Services</p>
-            <h2>Everything your company website actually needs</h2>
+            <h2>What a professional SME website actually needs</h2>
+            <p>Each project is built around business impact: strategic structure, credible content, and robust execution.</p>
           </div>
+
           <div class="services-grid">
-            <article class="service-card reveal" data-code="WD"><h3>Web Design</h3><p>Distinctive design language and premium typography.</p></article>
-            <article class="service-card reveal" data-code="DEV"><h3>Development</h3><p>Clean, fast code with a stable and maintainable foundation.</p></article>
-            <article class="service-card reveal" data-code="SEO"><h3>SEO</h3><p>Technical SEO setup and structured metadata from day one.</p></article>
-            <article class="service-card reveal" data-code="TXT"><h3>Copywriting</h3><p>Clear and credible wording focused on real conversion goals.</p></article>
-            <article class="service-card reveal" data-code="HST"><h3>Hosting</h3><p>Support with domain, SSL, performance, and deployment.</p></article>
-            <article class="service-card reveal" data-code="MNT"><h3>Maintenance</h3><p>Reliable updates and support after launch.</p></article>
+            <article class="service-card reveal" data-code="STR">
+              <h3>Positioning and page strategy</h3>
+              <p>We refine your offer and define which content turns visits into high-quality inquiries.</p>
+            </article>
+            <article class="service-card reveal" data-code="DSN">
+              <h3>Design with real differentiation</h3>
+              <p>A premium visual language and typography system aligned with your market and brand tone.</p>
+            </article>
+            <article class="service-card reveal" data-code="DEV">
+              <h3>Development and performance</h3>
+              <p>Clean code, fast loading, and responsive behavior across desktop, tablet, and mobile.</p>
+            </article>
+            <article class="service-card reveal" data-code="SEO">
+              <h3>SEO fundamentals from day one</h3>
+              <p>Structured metadata and technically sound architecture for stronger local discoverability.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="pricing" data-section="pricing">
+      <section class="section section-muted" id="pricing" data-section="pricing">
         <div class="container">
           <div class="section-head reveal">
             <p class="eyebrow">Pricing</p>
-            <h2>Transparent structure, easy to compare</h2>
+            <h2>Transparent packages that are easy to compare</h2>
+            <p>Fixed package structure for clear decisions. Custom extensions can be added anytime.</p>
           </div>
 
           <div class="pricing-grid">
             <article class="price-card reveal">
-              <header><h3>Basic</h3><p class="price">CHF 990</p></header>
-              <p class="price-subline">For a professional starting point</p>
-              <ul><li>One-page company website</li><li>Responsive design</li><li>Contact form</li><li>Basic SEO setup</li></ul>
-              <a class="btn btn-ghost" href="#contact">Start inquiry</a>
+              <header>
+                <h3>Starter</h3>
+                <p class="price">CHF 1,090</p>
+              </header>
+              <p class="price-subline">Best for smaller companies with one clear offer</p>
+              <ul>
+                <li>One-page company website</li>
+                <li>Contact form + basic tracking</li>
+                <li>SEO setup</li>
+                <li>Delivery: about 2 weeks</li>
+              </ul>
+              <a class="btn btn-ghost" href="#contact">Request starter</a>
             </article>
+
             <article class="price-card is-featured reveal">
-              <p class="badge">Recommended</p>
-              <header><h3>Professional</h3><p class="price">CHF 1880</p></header>
-              <p class="price-subline">Best balance of quality and budget</p>
-              <ul><li>Up to 5 pages</li><li>Custom premium design</li><li>SEO + performance tuning</li><li>Copy support and conversion focus</li></ul>
-              <a class="btn btn-primary" href="#contact">Plan project</a>
+              <p class="badge">Most selected</p>
+              <header>
+                <h3>Professional</h3>
+                <p class="price">CHF 2,290</p>
+              </header>
+              <p class="price-subline">For SMEs actively working on new customer acquisition</p>
+              <ul>
+                <li>Up to 6 pages with conversion-focused structure</li>
+                <li>Messaging workshop and copy support</li>
+                <li>Technical SEO + performance optimization</li>
+                <li>Delivery: about 3-4 weeks</li>
+              </ul>
+              <a class="btn btn-primary" href="#contact">Plan professional</a>
             </article>
+
             <article class="price-card reveal">
-              <header><h3>Enterprise</h3><p class="price">CHF 2950</p></header>
-              <p class="price-subline">For larger or more complex requirements</p>
-              <ul><li>Complex page architecture</li><li>Advanced functionality</li><li>Priority timeline</li><li>Personal project guidance</li></ul>
-              <a class="btn btn-ghost" href="#contact">Discuss project</a>
+              <header>
+                <h3>Growth</h3>
+                <p class="price">from CHF 3,490</p>
+              </header>
+              <p class="price-subline">For advanced requirements and larger website structures</p>
+              <ul>
+                <li>Custom page architecture</li>
+                <li>Advanced features and integrations</li>
+                <li>Priority implementation</li>
+                <li>Direct strategic guidance</li>
+              </ul>
+              <a class="btn btn-ghost" href="#contact">Discuss growth</a>
             </article>
           </div>
 
-          <p class="pricing-note reveal">Additional pages: <strong>CHF 250 per page</strong></p>
-          <div class="pricing-assurance reveal">
-            <span>No setup fees</span>
-            <span>Clearly defined deliverables</span>
-            <span>Personal handover included</span>
-          </div>
-
-          <div class="maintenance reveal">
-            <h3>Maintenance plans after launch</h3>
-            <div class="maintenance-grid">
-              <article><h4>Basic</h4><p>CHF 49 / month</p><span>small updates included</span></article>
-              <article><h4>Plus</h4><p>CHF 89 / month</p><span>regular website updates</span></article>
-              <article><h4>Pro</h4><p>CHF 149 / month</p><span>priority support and adjustments</span></article>
-            </div>
+          <div class="pricing-note reveal" role="note" aria-label="Pricing details">
+            <p><strong>Additional pages:</strong> from CHF 290 per page</p>
+            <p><strong>Maintenance:</strong> from CHF 59 per month including updates and minor content changes</p>
           </div>
         </div>
       </section>
 
-      <section class="section section-muted" id="process" data-section="process">
+      <section class="section" id="cases" data-section="cases">
         <div class="container">
           <div class="section-head reveal">
-            <p class="eyebrow">Process</p>
-            <h2>Four clear steps to launch</h2>
+            <p class="eyebrow">Case studies</p>
+            <h2>How typical SME projects are improved in practice</h2>
+            <p>Representative examples based on recurring challenges from Swiss service and trade businesses.</p>
           </div>
-          <ol class="process-grid">
-            <li class="process-card reveal"><span>01</span><h3>Call</h3><p>We define goals and priorities clearly.</p></li>
-            <li class="process-card reveal"><span>02</span><h3>Concept</h3><p>Structure, content, and design direction are aligned.</p></li>
-            <li class="process-card reveal"><span>03</span><h3>Build</h3><p>Design and development are executed with clarity and pace.</p></li>
-            <li class="process-card reveal"><span>04</span><h3>Launch</h3><p>Final QA, publishing, and handover support.</p></li>
-          </ol>
-        </div>
-      </section>
 
-      <section class="section" id="portfolio" data-section="portfolio">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">Case demos</p>
-            <h2>Typical projects for Swiss SMEs</h2>
-          </div>
           <div class="portfolio-grid">
-            <article class="case-card tone-1 reveal"><div class="case-mock" role="img" aria-label="Trades business website mockup"></div><div class="case-body"><p class="case-industry">Trades</p><h3>Goal: more local leads</h3><p>Solution: clear service pages, references, and stronger CTAs.</p><p><strong>Package:</strong> Professional</p><a href="#contact">Request similar project</a></div></article>
-            <article class="case-card tone-2 reveal"><div class="case-mock" role="img" aria-label="Restaurant website mockup"></div><div class="case-body"><p class="case-industry">Hospitality</p><h3>Goal: more reservations</h3><p>Solution: mobile-first layout and prominent booking actions.</p><p><strong>Package:</strong> Basic + extra pages</p><a href="#contact">Discuss this setup</a></div></article>
-            <article class="case-card tone-3 reveal"><div class="case-mock" role="img" aria-label="Service business website mockup"></div><div class="case-body"><p class="case-industry">Services</p><h3>Goal: trust in first contact</h3><p>Solution: clear positioning and stronger proof structure.</p><p><strong>Package:</strong> Enterprise</p><a href="#contact">Start strategy call</a></div></article>
+            <article class="case-card reveal">
+              <div class="case-mock tone-1" role="img" aria-label="Trades case study"></div>
+              <div class="case-body">
+                <p class="case-industry">Trades, Zurich area</p>
+                <h3>Problem: many visits, few real inquiries</h3>
+                <p><strong>Execution:</strong> offer positioning sharpened, references restructured, contact flow simplified.</p>
+                <p><strong>Outcome:</strong> stronger rate of qualified first calls from the contact form.</p>
+                <a href="#contact">Discuss a similar setup</a>
+              </div>
+            </article>
+
+            <article class="case-card reveal">
+              <div class="case-mock tone-2" role="img" aria-label="Hospitality case study"></div>
+              <div class="case-body">
+                <p class="case-industry">Hospitality, Central Switzerland</p>
+                <h3>Problem: mobile users struggled to find booking actions</h3>
+                <p><strong>Execution:</strong> simplified navigation, fixed CTA placement, faster page loading.</p>
+                <p><strong>Outcome:</strong> more direct booking requests from smartphones.</p>
+                <a href="#contact">Apply this structure</a>
+              </div>
+            </article>
+
+            <article class="case-card reveal">
+              <div class="case-mock tone-3" role="img" aria-label="Consulting case study"></div>
+              <div class="case-body">
+                <p class="case-industry">Consulting, German-speaking Switzerland</p>
+                <h3>Problem: strong offer but generic first impression</h3>
+                <p><strong>Execution:</strong> messaging repositioned, trust elements expanded, service pages clarified.</p>
+                <p><strong>Outcome:</strong> better first-contact trust and higher meeting conversion.</p>
+                <a href="#contact">Start conversion audit</a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="section section-muted" id="trust" data-section="trust">
-        <div class="container trust-wrap reveal">
-          <div>
-            <p class="eyebrow">Trust</p>
-            <h2>Collaboration built on clarity and reliability</h2>
-          </div>
-          <ul class="trust-list">
-            <li>Reply within 24 hours</li>
-            <li>Free initial consultation</li>
-            <li>Swiss quality standard</li>
-            <li>Transparent pricing</li>
-            <li>Clear process from start to launch</li>
-            <li>Direct personal collaboration</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section" id="about" data-section="about">
+      <section class="section section-muted" id="about" data-section="about">
         <div class="container about-grid">
           <div class="about-copy reveal">
             <p class="eyebrow">About HK Design</p>
-            <h2>Your direct partner for a professional digital presence</h2>
+            <h2>Direct collaboration instead of handovers across agency layers</h2>
             <p>
-              HK Design supports Swiss SMEs from first strategy discussion to successful launch.
-              The focus is always clarity, quality, and practical execution.
+              I handle projects personally from first analysis to launch.
+              That means faster decisions, clear ownership, and implementation that actually fits your business.
             </p>
           </div>
           <div class="values reveal">
-            <h3>Values</h3>
+            <h3>How I work</h3>
             <ul>
-              <li><strong>Transparency:</strong> clear scope and understandable pricing.</li>
-              <li><strong>Quality:</strong> premium design and robust technical setup.</li>
-              <li><strong>Reliability:</strong> structured process and dependable delivery.</li>
-              <li><strong>Partnership:</strong> direct collaboration at eye level.</li>
+              <li><strong>Reliable:</strong> clear milestones and transparent communication.</li>
+              <li><strong>Practical:</strong> no unnecessary jargon, only decisions with clear business value.</li>
+              <li><strong>Quality-driven:</strong> design, messaging, and technology work together cleanly.</li>
+              <li><strong>Long-term:</strong> support remains available after launch.</li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      <section class="section cta-band" aria-label="Call to action">
+        <div class="container cta-band-wrap reveal">
+          <div>
+            <p class="eyebrow">Next step</p>
+            <h2>You receive a concrete recommendation, not a generic sales pitch.</h2>
+          </div>
+          <a class="btn btn-primary" href="#contact">Start free website review</a>
         </div>
       </section>
 
@@ -318,42 +334,66 @@
           <div class="contact-copy reveal">
             <p class="eyebrow">Contact</p>
             <h2>Share your project in a few lines</h2>
-            <p>You will get a clear response within 24 hours.</p>
+            <p>You will receive a clear response within 24 hours with realistic next steps.</p>
             <ul>
               <li>Email: <a href="mailto:kontakt@hkdesign.ch">kontakt@hkdesign.ch</a></li>
               <li>Location: Switzerland</li>
-              <li>Free initial call: 30 minutes</li>
+              <li>Free intro call: 30 minutes</li>
             </ul>
           </div>
 
           <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
-            <div class="grid-2">
-              <label>First name<input type="text" name="first_name" required /></label>
-              <label>Last name<input type="text" name="last_name" required /></label>
-            </div>
-            <label>Company<input type="text" name="company" /></label>
-            <label>Email<input type="email" name="email" required /></label>
-            <label>
-              Project need
-              <select name="need" required>
-                <option value="">Please choose</option>
-                <option>New company website</option>
-                <option>Website redesign</option>
-                <option>SEO and visibility</option>
-                <option>Maintenance and support</option>
-              </select>
-            </label>
-            <label>Message<textarea name="message" rows="5" required></textarea></label>
+            <fieldset>
+              <legend>Project inquiry</legend>
+              <div class="grid-2">
+                <div>
+                  <label for="first-name">First name</label>
+                  <input id="first-name" type="text" name="first_name" autocomplete="given-name" required />
+                </div>
+                <div>
+                  <label for="last-name">Last name</label>
+                  <input id="last-name" type="text" name="last_name" autocomplete="family-name" required />
+                </div>
+              </div>
+
+              <div>
+                <label for="company">Company</label>
+                <input id="company" type="text" name="company" autocomplete="organization" />
+              </div>
+
+              <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" autocomplete="email" required />
+              </div>
+
+              <div>
+                <label for="need">Project need</label>
+                <select id="need" name="need" required>
+                  <option value="">Please choose</option>
+                  <option>New company website</option>
+                  <option>Website relaunch</option>
+                  <option>Local SEO visibility</option>
+                  <option>Maintenance and support</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+              </div>
+            </fieldset>
 
             <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
-            <label class="consent">
-              <input type="checkbox" name="consent" required />
-              <span>I agree to the processing described in the <a href="../datenschutz.html">privacy policy</a>.</span>
+            <label class="consent" for="consent">
+              <input id="consent" type="checkbox" name="consent" required />
+              <span>I have read the <a href="../datenschutz.html">privacy policy</a> and agree to data processing.</span>
             </label>
 
-            <button class="btn btn-primary" type="submit">Send request</button>
-            <p class="form-note">Formspree placeholder is active. Replace <code>YOUR_FORMSPREE_ID</code>.</p>
+            <button class="btn btn-primary" type="submit">Send inquiry</button>
+            <p class="form-note" id="formspree-hint">
+              Formspree is prepared. Replace the placeholder in `action`: `https://formspree.io/f/YOUR_FORMSPREE_ID`.
+            </p>
             <p class="form-message" role="status" aria-live="polite"></p>
           </form>
         </div>
@@ -364,7 +404,7 @@
       <div class="container footer-grid">
         <div>
           <a class="logo" href="#home">HK<span>.</span>Design</a>
-          <p>Professional websites for Swiss SMEs. Clear, fast, and transparent.</p>
+          <p>Professional websites for Swiss SMEs with strategic clarity, premium execution, and direct collaboration.</p>
         </div>
         <div>
           <h3>Links</h3>
@@ -383,7 +423,7 @@
       </div>
     </footer>
 
-    <a class="mobile-sticky-cta" href="#contact">Request your project now</a>
+    <a class="mobile-sticky-cta" href="#contact">Request your project</a>
 
     <script src="../js/script.js" defer></script>
   </body>

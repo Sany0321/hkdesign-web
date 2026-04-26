@@ -18,7 +18,21 @@
     header.classList.toggle('is-scrolled', window.scrollY > 10);
   };
 
+  const setMenuLabel = (isOpen) => {
+    if (!menuToggle) return;
+    const labelNode = menuToggle.querySelector('.sr-only');
+    if (!labelNode) return;
+    labelNode.textContent = isOpen
+      ? isEnglish
+        ? 'Close menu'
+        : 'Menue schliessen'
+      : isEnglish
+        ? 'Open menu'
+        : 'Menue oeffnen';
+  };
+
   setHeaderState();
+  setMenuLabel(false);
   window.addEventListener('scroll', setHeaderState, { passive: true });
 
   if (menuToggle && mobileNav) {
@@ -26,13 +40,16 @@
       mobileNav.classList.remove('is-open');
       menuToggle.setAttribute('aria-expanded', 'false');
       body.classList.remove('menu-open');
+      setMenuLabel(false);
     };
 
     menuToggle.addEventListener('click', () => {
       const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', String(!expanded));
-      mobileNav.classList.toggle('is-open');
-      body.classList.toggle('menu-open');
+      const next = !expanded;
+      menuToggle.setAttribute('aria-expanded', String(next));
+      mobileNav.classList.toggle('is-open', next);
+      body.classList.toggle('menu-open', next);
+      setMenuLabel(next);
     });
 
     navLinks.forEach((link) => {
@@ -52,23 +69,34 @@
       if (!(target instanceof Node)) return;
       if (!mobileNav.contains(target) && !menuToggle.contains(target)) closeMobileMenu();
     });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 980) closeMobileMenu();
+    });
   }
 
   if (sections.length && desktopLinks.length) {
+    const clearAriaCurrent = () => {
+      desktopLinks.forEach((link) => link.removeAttribute('aria-current'));
+    };
+
     const sectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
           const id = entry.target.getAttribute('id');
+          clearAriaCurrent();
+
           desktopLinks.forEach((link) => {
             const active = link.getAttribute('href') === `#${id}`;
             link.classList.toggle('is-active', active);
+            if (active) link.setAttribute('aria-current', 'true');
           });
         });
       },
       {
-        rootMargin: '-30% 0px -55% 0px',
-        threshold: 0.1
+        rootMargin: '-25% 0px -55% 0px',
+        threshold: 0.15
       }
     );
 
@@ -79,13 +107,12 @@
     const revealObserver = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.14 }
     );
 
     revealItems.forEach((item) => revealObserver.observe(item));
@@ -98,7 +125,8 @@
     const setMessage = (text, type) => {
       if (!messageNode) return;
       messageNode.textContent = text;
-      messageNode.style.color = type === 'error' ? '#ffd0d0' : '#d8f7dc';
+      if (type) messageNode.dataset.state = type;
+      else messageNode.removeAttribute('data-state');
     };
 
     const validateField = (field) => {
@@ -116,22 +144,33 @@
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      setMessage('', 'ok');
+      setMessage('', null);
 
       const honeypot = form.querySelector('input[name="website"]');
       if (honeypot && honeypot.value.trim() !== '') {
-        setMessage(isEnglish ? 'Thanks, your request has been safely captured.' : 'Danke, Ihre Anfrage wurde gespeichert.', 'ok');
+        setMessage(
+          isEnglish ? 'Thanks. Your request has been safely captured.' : 'Danke. Ihre Anfrage wurde sicher erfasst.',
+          'ok'
+        );
         form.reset();
         return;
       }
 
       let isValid = true;
+      let firstInvalid = null;
+
       fields.forEach((field) => {
-        if (!validateField(field)) isValid = false;
+        const fieldValid = validateField(field);
+        if (!fieldValid && !firstInvalid) firstInvalid = field;
+        if (!fieldValid) isValid = false;
       });
 
       if (!isValid) {
-        setMessage(isEnglish ? 'Please check the highlighted fields.' : 'Bitte prüfen Sie die markierten Felder.', 'error');
+        setMessage(
+          isEnglish ? 'Please check the highlighted fields.' : 'Bitte pruefen Sie die markierten Felder.',
+          'error'
+        );
+        if (firstInvalid instanceof HTMLElement) firstInvalid.focus();
         return;
       }
 
@@ -141,8 +180,8 @@
       if (isPlaceholder) {
         setMessage(
           isEnglish
-            ? 'Thank you. Formspree is still in placeholder mode, submission was simulated locally.'
-            : 'Vielen Dank. Formspree ist noch im Platzhaltermodus. Anfrage wurde lokal simuliert.',
+            ? 'Formspree is still in placeholder mode. Submission was simulated locally.'
+            : 'Formspree ist noch im Platzhaltermodus. Versand wurde lokal simuliert.',
           'ok'
         );
         form.reset();
@@ -159,15 +198,15 @@
         if (!response.ok) throw new Error('Request failed');
 
         setMessage(
-          isEnglish ? 'Thank you. Your request has been sent successfully.' : 'Danke. Ihre Anfrage wurde erfolgreich versendet.',
+          isEnglish ? 'Thank you. Your inquiry was sent successfully.' : 'Danke. Ihre Anfrage wurde erfolgreich gesendet.',
           'ok'
         );
         form.reset();
       } catch (error) {
         setMessage(
           isEnglish
-            ? 'Sending is currently unavailable. Please email kontakt@hkdesign.ch.'
-            : 'Versand aktuell nicht möglich. Bitte senden Sie eine E-Mail an kontakt@hkdesign.ch.',
+            ? 'Sending is currently unavailable. Please use kontakt@hkdesign.ch.'
+            : 'Versand aktuell nicht moeglich. Bitte nutzen Sie kontakt@hkdesign.ch.',
           'error'
         );
       }

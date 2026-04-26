@@ -1,39 +1,45 @@
-# Webseite HK Design
+# HK Design Webseite
 
-Projektstruktur fuer eine moderne Website mit Vite, GitHub und Deployment ueber GitHub Pages.
+Statische, zweisprachige Firmenwebseite (DE/EN) fuer HK Design mit Fokus auf Conversion, SEO und schnelle Auslieferung ueber GitHub Pages.
 
 ## Voraussetzungen
 
 - Node.js 20+
 - npm
 
-## Lokal starten
+## Lokal entwickeln
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Build erstellen
+## Produktions-Build
 
 ```bash
 npm run build
 ```
 
-Der Build liegt danach im Ordner `dist/`.
+Die Build-Ausgabe liegt danach im Ordner `dist/`.
 
 ## Deployment (GitHub Pages)
 
-Sobald du das Projekt nach GitHub pushst, deployed die Workflow-Datei automatisch auf GitHub Pages.
-
-Wichtig in GitHub:
+Der Build wird ueber GitHub Actions ausgerollt.
 
 1. `Settings` -> `Pages`
 2. `Source`: `GitHub Actions`
 
 ## Projektstruktur
 
-- `src/` Quellcode (Styles, Scripts, Komponenten, Seiten)
-- `public/` statische Dateien
-- `.github/workflows/` CI/CD Deploy
+- `index.html` deutsche Hauptseite
+- `en/index.html` englische Version
+- `css/style.css` globales Styling
+- `js/script.js` Navigation, Scroll-States, Formular-Validierung
+- `assets/` Favicons und OG-Grafik
+- `impressum.html`, `datenschutz.html`, `404.html` rechtliche/technische Seiten
+- `.github/workflows/` Deployment-Pipeline
 - `dist/` Build-Ausgabe
+
+## Formular-Hinweis
+
+Im Kontaktformular ist Formspree vorbereitet. Ersetze in beiden HTML-Dateien den Platzhalter `YOUR_FORMSPREE_ID` durch deine echte Formspree-ID.
