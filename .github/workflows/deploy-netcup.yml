@@ -56,26 +56,6 @@ jobs:
             exit 1
           fi
 
-      - name: Normalize target directory
-        id: target_dir
-        env:
-          TARGET_DIR_RAW: ${{ secrets.NETCUP_FTP_TARGET_DIR }}
-        run: |
-          raw="$TARGET_DIR_RAW"
-          normalized="${raw#/}"
-          normalized="${normalized#./}"
-
-          if [ -z "$normalized" ]; then
-            normalized="./"
-          fi
-
-          if [ "$normalized" != "./" ] && [ "${normalized%/}" = "$normalized" ]; then
-            normalized="$normalized/"
-          fi
-
-          echo "Using netcup target directory: $normalized"
-          echo "value=$normalized" >> "$GITHUB_OUTPUT"
-
       - name: Deploy to netcup (dry-run)
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
@@ -86,7 +66,7 @@ jobs:
           protocol: ${{ vars.NETCUP_FTP_PROTOCOL || 'ftps' }}
           port: ${{ vars.NETCUP_FTP_PORT || '21' }}
           local-dir: ./dist/
-          server-dir: ${{ steps.target_dir.outputs.value }}
+          server-dir: ./${{ secrets.NETCUP_FTP_TARGET_DIR }}
           dry-run: true
           timeout: 120000
           log-level: standard
@@ -103,7 +83,7 @@ jobs:
           protocol: ${{ vars.NETCUP_FTP_PROTOCOL || 'ftps' }}
           port: ${{ vars.NETCUP_FTP_PORT || '21' }}
           local-dir: ./dist/
-          server-dir: ${{ steps.target_dir.outputs.value }}
+          server-dir: ./${{ secrets.NETCUP_FTP_TARGET_DIR }}
           timeout: 120000
           log-level: standard
 
@@ -119,7 +99,7 @@ jobs:
           protocol: ${{ vars.NETCUP_FTP_PROTOCOL || 'ftps' }}
           port: ${{ vars.NETCUP_FTP_PORT || '21' }}
           local-dir: ./dist/
-          server-dir: ${{ steps.target_dir.outputs.value }}
+          server-dir: ./${{ secrets.NETCUP_FTP_TARGET_DIR }}
           timeout: 120000
           log-level: standard
 
@@ -133,6 +113,6 @@ jobs:
           protocol: ${{ vars.NETCUP_FTP_PROTOCOL || 'ftps' }}
           port: ${{ vars.NETCUP_FTP_PORT || '21' }}
           local-dir: ./dist/
-          server-dir: ${{ steps.target_dir.outputs.value }}
+          server-dir: ./${{ secrets.NETCUP_FTP_TARGET_DIR }}
           timeout: 120000
           log-level: verbose
