@@ -25,10 +25,10 @@
     labelNode.textContent = isOpen
       ? isEnglish
         ? 'Close menu'
-        : 'Menue schliessen'
+        : 'Menü schliessen'
       : isEnglish
         ? 'Open menu'
-        : 'Menue oeffnen';
+        : 'Menü öffnen';
   };
 
   setHeaderState();
@@ -167,7 +167,7 @@
 
       if (!isValid) {
         setMessage(
-          isEnglish ? 'Please check the highlighted fields.' : 'Bitte pruefen Sie die markierten Felder.',
+          isEnglish ? 'Please check the highlighted fields.' : 'Bitte prüfen Sie die markierten Felder.',
           'error'
         );
         if (firstInvalid instanceof HTMLElement) firstInvalid.focus();
@@ -206,7 +206,7 @@
         setMessage(
           isEnglish
             ? 'Sending is currently unavailable. Please use kontakt@hkdesign.ch.'
-            : 'Versand aktuell nicht moeglich. Bitte nutzen Sie kontakt@hkdesign.ch.',
+            : 'Versand aktuell nicht möglich. Bitte nutzen Sie kontakt@hkdesign.ch.',
           'error'
         );
       }
