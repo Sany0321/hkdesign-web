@@ -1,0 +1,82 @@
+name: Deploy to netcup
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only simulate upload (no file changes on server)"
+        required: true
+        type: boolean
+        default: true
+
+concurrency:
+  group: netcup-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: ${{ vars.NETCUP_DEPLOY_ENABLED == 'true' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build dist
+        run: npm run build
+
+      - name: Validate required secrets
+        env:
+          NETCUP_FTP_HOST: ${{ secrets.NETCUP_FTP_HOST }}
+          NETCUP_FTP_USERNAME: ${{ secrets.NETCUP_FTP_USERNAME }}
+          NETCUP_FTP_PASSWORD: ${{ secrets.NETCUP_FTP_PASSWORD }}
+          NETCUP_FTP_TARGET_DIR: ${{ secrets.NETCUP_FTP_TARGET_DIR }}
+        run: |
+          missing=0
+          for key in NETCUP_FTP_HOST NETCUP_FTP_USERNAME NETCUP_FTP_PASSWORD NETCUP_FTP_TARGET_DIR; do
+            if [ -z "${!key}" ]; then
+              echo "::error title=Missing GitHub secret::Secret '$key' is not set"
+              missing=1
+            fi
+          done
+
+          if [ "$missing" -ne 0 ]; then
+            echo "Please set the required secrets in: Settings -> Secrets and variables -> Actions"
+            exit 1
+          fi
+
+      - name: Deploy to netcup (dry-run)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.NETCUP_FTP_HOST }}
+          username: ${{ secrets.NETCUP_FTP_USERNAME }}
+          password: ${{ secrets.NETCUP_FTP_PASSWORD }}
+          protocol: ${{ vars.NETCUP_FTP_PROTOCOL || 'ftps' }}
+          port: ${{ vars.NETCUP_FTP_PORT || '21' }}
+          local-dir: ./dist/
+          server-dir: ${{ secrets.NETCUP_FTP_TARGET_DIR }}
+          dry-run: true
+
+      - name: Deploy to netcup
+        if: ${{ github.event_name != 'workflow_dispatch' || !inputs.dry_run }}
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.NETCUP_FTP_HOST }}
+          username: ${{ secrets.NETCUP_FTP_USERNAME }}
+          password: ${{ secrets.NETCUP_FTP_PASSWORD }}
+          protocol: ${{ vars.NETCUP_FTP_PROTOCOL || 'ftps' }}
+          port: ${{ vars.NETCUP_FTP_PORT || '21' }}
+          local-dir: ./dist/
+          server-dir: ${{ secrets.NETCUP_FTP_TARGET_DIR }}
